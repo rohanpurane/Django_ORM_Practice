@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}<title>Get</title>{% endblock title %}
+{% block content %}
+
+    <div class="col-12">
+        <h1>Get Operation</h1>
+                <br><br>
+                <form action="" method="post">{% csrf_token %}
+                    {{data.as_p}}
+                    <button type="submit">Search</button>
+                </form>
+                <br><br>
+        <div class="bg-secondary rounded h-100 p-4">
+            <h6 class="mb-4">Categoy Note(You can't change the Title)</h6>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Roll</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Pass Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{fm.id}}</th>
+                            <td>{{fm.name}}</td>
+                            <td>{{fm.roll}}</td>
+                            <td>{{fm.city}}</td>
+                            <td>{{fm.pass_date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
