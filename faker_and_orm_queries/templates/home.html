@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Home</title>{% endblock title %}
+{% block content %}
+<div class="col-12">
+    <h1>Home Page</h1>
+    <br>
+    <a href="{% url 'gen_data' %}" class="btn btn-success m-2">Generate Data</a>
+    <br>
+    <div class="bg-secondary rounded h-100 p-4">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employee ID</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Employee Address</th>
+                        <th scope="col">Employee Job Roll</th>
+                        <th scope="col">Employee Salary</th>
+                        <th scope="col">Employee Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fm in data %}
+                    <tr>
+                        <th scope="row">{{fm.employee_id}}</th>
+                        <td>{{fm.employee_name}}</td>
+                        <td>{{fm.employee_address}}</td>
+                        <td>{{fm.employee_job_roll}}</td>
+                        <td>{{fm.employee_salary}}</td>
+                        <td>{{fm.employee_age}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

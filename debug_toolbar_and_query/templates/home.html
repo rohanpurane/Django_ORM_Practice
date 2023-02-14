@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Home</title>{% endblock title %}
+{% block content %}
+<div class="col-12">
+    <h1>Home Page</h1>
+    <br>
+    <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4">Read Update Delete</h6>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">User</th>
+                        <th scope="col">School</th>
+                        <th scope="col">Tusions</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fm in form %}
+                    <tr>
+                        <th scope="row">{{fm.id}}</th>
+                        <td>{{fm.user}}</td>
+                        <td>{{fm.school}}</td>
+                        <td>{{fm.sub}}</td>
+                        <td>{{fm.name}}</td>
+                        <td>{{fm.city}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}
