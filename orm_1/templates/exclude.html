@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}<title>Exclude</title>{% endblock title %}
+{% block content %}
+    <div class="cotainer">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h1>Exclude Operation</h1>
+                <br><br>
+                <form action="" method="post">{% csrf_token %}
+                    {{data.as_p}}
+                    <button type="submit">Search</button>
+                </form>
+                <br><br>
+
+                <table class="table table-striped table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Roll</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Pass Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for fm in form %}
+                    <tr>
+                        <th scope="row">{{fm.id}}</th>
+                        <td>{{fm.name}}</td>
+                        <td>{{fm.roll}}</td>
+                        <td>{{fm.city}}</td>
+                        <td>{{fm.pass_date}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}<title>Some No. of Data</title>{% endblock title %}
+{% block content %}
+    <div class="cotainer">
+        <div class="row">
+            <div class="col-sm-12">
+                                
+                <h1>Some No. of Data</h1>
+                <h3>Mention starting no. and ending no. to see how many students data you want to see</h3>
+                <br><br>
+                <form action="" method="post">{% csrf_token %}
+                    {{data.as_p}}
+                    <button type="submit">Submit</button>
+                </form>
+                <br>
+
+                <table class="table table-striped table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Roll</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Pass Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for fm in form %}
+                    <tr>
+                        <th scope="row">{{fm.id}}</th>
+                        <td>{{fm.name}}</td>
+                        <td>{{fm.roll}}</td>
+                        <td>{{fm.city}}</td>
+                        <td>{{fm.pass_date}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
