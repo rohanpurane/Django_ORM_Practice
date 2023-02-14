@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}<title>Update</title>{% endblock title %}
+{% block content %}
+    <div class="cotainer">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h1>Update Data</h1>
+                <br><br>
+                <form action="" method="post">{% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit">Update</button>
+                </form>
+                <br><br>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}<title>Q</title>{% endblock title %}
+{% block content %}
+
+    <div class="col-12">
+        <h1>Q Operation</h1>
+        <br><br>
+        <div class="bg-secondary rounded h-100 p-4">
+            <h6 class="mb-4">Categoy Note(You can't change the Title)</h6>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Roll</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Marks</th>
+                            <th scope="col">Pass Date</th>
+                            <th scope="col">Adminssion Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fm in data %}
+                        <tr>
+                            <th scope="row">{{fm.id}}</th>
+                            <td>{{fm.name}}</td>
+                            <td>{{fm.roll}}</td>
+                            <td>{{fm.city}}</td>
+                            <td>{{fm.marks}}</td>
+                            <td>{{fm.pass_date}}</td>
+                            <td>{{fm.admission_date}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
